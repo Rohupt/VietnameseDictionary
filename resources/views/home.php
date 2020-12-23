@@ -7,23 +7,22 @@
 </head>
 <body>
 
-<div class="topbar">
-<ul>
-    <li class="signin"><a href="Signin">Đăng nhập/Đăng ký</a></li>
-</ul>
+    <div class="topbar">
+      <ul>
+            <li class="signin"><a href="Signin">Đăng nhập/Đăng ký</a></li>
+     </ul>
+    </div>
+
+    <img src="../images/logo.png" class='logo' alt=""　 />
+
+
+    <div class='searchtext'>
+        <h1>Nhập từ khóa bạn muốn tra cứu:</h1></div>
+        <form class="searchbar">
+                <input type="text" placeholder="Search.." name="search">
+               <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
 </div>
-
-
-<img src="../images/logo.png" class='logo' alt=""　 />
-</div>
-
-<div class='searchtext'>
-    <h1>Nhập từ khóa bạn muốn tra cứu:</h1></div>
-<form class="searchbar">
-    <input type="text" placeholder="Search.." name="search">
-     <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-
 
 
 </body>
