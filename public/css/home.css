@@ -28,16 +28,14 @@ body {
     text-align: right;
     padding: 15px 15px;
     text-decoration: none;
-   
-  
+    border-radius: 30px;
+    margin-right: 70px;
   }
   .signin{
-      margin: 7px 7px 7px 7px;
-      border: 3px solid white;
       float: right;
   }
   li a:hover {
-    background-color: white;
+    background-color: #ffcccc;
     color:black
   }
   .searchbar{
@@ -75,7 +73,7 @@ body {
   }
   
   form.searchbar button:hover {
-    background: white;
+    background: #ffcccc;
     color: #333;
   }
   
