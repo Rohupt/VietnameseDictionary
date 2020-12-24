@@ -1,0 +1,85 @@
+body {
+    font-family: Arial;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    
+  }
+  
+  .logo{
+   margin-left: 650px;
+   margin-right: 600px;
+  }
+  
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: right;
+    padding: 15px 15px;
+    text-decoration: none;
+   
+  
+  }
+  .signin{
+      margin: 7px 7px 7px 7px;
+      border: 3px solid white;
+      float: right;
+  }
+  li a:hover {
+    background-color: white;
+    color:black
+  }
+  .searchbar{
+      display: flex;
+    justify-content: center;
+    margin-top: 0px;
+  }
+  .searchtext{
+      text-align: center;
+      margin-top: 150px;
+      margin-left: -100px;
+  }
+  form.searchbar input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 2px solid black;
+    float: left;
+    width: 40%;
+    height: 50px;
+    background: #f1f1f1;
+  }
+  
+  form.searchbar button {
+    float: left;
+    width: 10%;
+    height: 50px;
+    padding: 10px;
+    background: black;
+    color: white;
+    font-size: 17px;
+    border: 2px solid black;
+    
+    cursor: pointer;
+    margin-left: 3px;
+  }
+  
+  form.searchbar button:hover {
+    background: white;
+    color: #333;
+  }
+  
+  form.searchbar::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
