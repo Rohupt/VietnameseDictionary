@@ -9,12 +9,13 @@
 
     <div class="topbar">
       <ul>
-            <li class="signin"><a href="Signin">Đăng nhập/Đăng ký</a></li>
+            <li class="signin"><a href="login.php">Đăng nhập/Đăng ký</a></li>
      </ul>
     </div>
 
-    <img src="../images/logo.png" class='logo' alt=""　 />
-
+    <div class="logo-bar">
+      <img src="../images/logo.png" class='logo' alt=""/>
+    </div>
 
     <div class='searchtext'>
         <h1>Nhập từ khóa bạn muốn tra cứu:</h1></div>
