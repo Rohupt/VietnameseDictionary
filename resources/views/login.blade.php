@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel='stylesheet' type='text/css' href='../css/loginform.css'>
+	<link rel='stylesheet' type='text/css' href='css/loginform.css'>
 </head>
 <body>
 <div class="login-wrap">
@@ -28,11 +28,11 @@ $mysqli -> close();
 			<div class="sign-in-htm">
 				<div class="group">
 					<label for="user" class="label">Email</label>
-					<input id="user" type="text" class="input">
+					<input id="user" type="text" placeholder="Email" class="input">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Mật khẩu</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<input id="pass" type="password" placeholder="Password" class="input" data-type="password">
 				</div>
 				<div class="group">
 					<input id="check" type="checkbox" class="check" checked>
@@ -49,15 +49,15 @@ $mysqli -> close();
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="user" class="label">Email</label>
-					<input id="user" type="text" class="input">
+					<input id="user" type="text" placeholder="Email" class="input">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Mật khẩu</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<input id="pass" type="password" placeholder="Password" class="input" data-type="password">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Nhập lại mật khẩu</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<input id="pass" type="password" placeholder="Confirm Password" class="input" data-type="password">
 				</div>
 				<div class="group">
 					<input type="submit" class="button" value="Đăng kí">

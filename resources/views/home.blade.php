@@ -10,7 +10,7 @@
 
     <div class="topbar">
       <ul>
-            <li class="signin"><a href="login.php">Đăng nhập/Đăng ký</a></li>
+            <li class="signin"><a href="signin">Đăng nhập/Đăng ký</a></li>
      </ul>
     </div>
 
