@@ -3,13 +3,13 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="../css/home.css">
+<link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
 <body>
 
     <div class="topbar">
       <ul>
-            <li class="signin"><a href="Signin">Đăng nhập/Đăng ký</a></li>
+            <li class="signin"><a href="signin">Đăng nhập/Đăng kí</a></li>
      </ul>
     </div>
 
@@ -17,12 +17,11 @@
 
 
     <div class='searchtext'>
-        <h1>Nhập từ khóa bạn muốn tra cứu:</h1></div>
         <form class="searchbar">
-                <input type="text" placeholder="Search.." name="search">
-               <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Nhập từ..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-</div>
+    </div>
 
 
 </body>
