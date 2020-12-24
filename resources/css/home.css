@@ -84,6 +84,7 @@ body {
     clear: both;
     display: table;
   }
+  
   .logo-bar {
     display: flex;
     align-items: center;
