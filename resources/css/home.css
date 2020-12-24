@@ -27,7 +27,8 @@ body {
     text-align: right;
     padding: 15px 15px;
     text-decoration: none;
-   
+   border-radius: 30px;
+   margin-right: 70px;
   
   }
   .signin{
@@ -37,7 +38,7 @@ body {
   }
   li a:hover {
     background-color: #ffcccc;
-    color:black
+    color:#24252a
   }
   .searchbar{
       display: flex;
