@@ -1,0 +1,11 @@
+.question{
+    margin-top: 100px;
+    align-items: center;
+}
+.answer{
+    margin-top: 5px;
+    border-radius: 4% ;
+    border: 2px solid black;
+    max-width: 300px;
+    max-height: 100px;
+}
