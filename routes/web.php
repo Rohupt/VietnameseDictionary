@@ -18,5 +18,5 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('signin', function () {
-    return view('login');
+    return view('signup');
 });

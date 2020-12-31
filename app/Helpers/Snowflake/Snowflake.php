@@ -46,6 +46,10 @@ class Snowflake {
         return $transform ? array_map(function ($value) { return bindec($value); }, $data) : $data;
     }
 
+    public function getTimeStamp(int $id) {
+        return $this->parse($id, true)['timestamp'] + $this->epoch;
+    }
+
     public function getCurrentMicrotime() {
         return floor(microtime(true) * 1000) | 0;
     }

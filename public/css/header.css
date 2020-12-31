@@ -73,3 +73,8 @@ form.searchbar::after {
   clear: both;
   display: table;
 }
+
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
