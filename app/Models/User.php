@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable //implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
+
+    const TYPE = 1;
+    public $incrementing = false;
 
     /**
      * The attributes that are mass assignable.
@@ -17,9 +20,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'id',
         'name',
+        'fullname',
         'email',
         'password',
+        'date_of_birth',
+        'gender'
     ];
 
     /**
