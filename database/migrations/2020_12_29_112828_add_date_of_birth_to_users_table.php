@@ -14,7 +14,7 @@ class AddDateOfBirthToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function ($table) {
-            $table->date('date_of_birth');
+            $table->date('date_of_birth')->after('password');
         });
     }
 
