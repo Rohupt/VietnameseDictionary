@@ -164,6 +164,7 @@
     "Username": "Tên người dùng",
     "Verify Email Address": "Xác minh địa chỉ email",
     "Verify Your Email Address": "Xác minh địa chỉ email của bạn",
+    "Verification link sent!": "Đã gửi đường dẫn xác minh.",
     "We were unable to find a registered user with this email address.": "Chúng tôi không thể tìm thấy người dùng đã đăng kí với địa chỉ email này.",
     "We won't ask for your password again for a few hours.": "Chúng tôi sẽ không hỏi lại mật khẩu của bạn trong vài giờ tới.",
     "When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application.": "Khi xác thực hai yếu tố được bật, bạn sẽ được nhắc nhập mã thông báo ngẫu nhiên, an toàn trong quá trình xác thực. Bạn có thể lấy mã thông báo này từ ứng dụng Google Authenticator trên điện thoại của mình.",
