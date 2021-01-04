@@ -2642,7 +2642,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn:hover {
-  color: #212529;
+  color: #ffcccc;
   text-decoration: none;
 }
 
@@ -2960,9 +2960,9 @@ fieldset:disabled a.btn {
 }
 
 .btn-dark:hover {
-  color: #fff;
-  background-color: #23272b;
-  border-color: #1d2124;
+  color: black;
+  background-color: #ffcccc;
+  
 }
 
 .btn-dark:focus,
@@ -3311,7 +3311,10 @@ fieldset:disabled a.btn {
   line-height: 1.5;
   border-radius: 0.3rem;
 }
-
+..btn-lg:hover{
+    background: #ffcccc;
+    
+}
 .btn-sm,
 .btn-group-sm > .btn {
   padding: 0.25rem 0.5rem;
@@ -3785,6 +3788,7 @@ input[type=button].btn-block {
 .input-group > .custom-select:focus,
 .input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
   z-index: 3;
+  outline: none;
 }
 
 .input-group > .custom-file .custom-file-input:focus {
@@ -4418,6 +4422,8 @@ input[type=button].btn-block {
 .nav-link:hover,
 .nav-link:focus {
   text-decoration: none;
+  color: #ffcccc;
+  border-bottom: 3px solid #ffcccc;
 }
 
 .nav-link.disabled {
@@ -4573,6 +4579,7 @@ input[type=button].btn-block {
 .navbar-toggler:hover,
 .navbar-toggler:focus {
   text-decoration: none;
+  background: #ffcccc;
 }
 
 .navbar-toggler-icon {
@@ -4943,6 +4950,7 @@ input[type=button].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  margin-top: 10%;
 }
 
 .card > hr {
