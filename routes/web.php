@@ -34,7 +34,9 @@ Route::group(['prefix' => 'email'], function () {
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
 
-Route::group(['prefix' => 'entry'], function () {
-    Route::get('/{entry}', [EntrySearchController::class, 'get'])->name('entrySearch');
-    Route::post('/', fn () => redirect()->route(request('q') != null ? 'entrySearch' : '/', ['entry' => request('q')]));
+
+
+Route::group(['prefix' => 'entry', 'as' => 'entry.'], function () {
+    Route::get('/{entry}', [EntrySearchController::class, 'get'])->name('search');
+    Route::post('/', fn () => redirect()->route(request('q') != null ? 'entry.search' : '/', ['entry' => request('q')]))->name('post');
 });
