@@ -3,21 +3,16 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
+        <img src="../images/logo.png" class='logo' alt="" />
+    </div>
+    <div class="row justify-content-center">
+        <form class="form-inline input-group col-md-8" method="POST" action="entry"}}">
+            @csrf
+            <input class="form-control form-control-lg border-dark bg-light rounded-left col-10" type="text" name="q" placeholder="Tìm từ" aria-label="Search">
+            <div class="input-group-btn input-group-append col-2 px-0">
+                <button class="btn btn-lg btn-dark col-12 rounded-right" type="submit">Tìm</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 @endsection
