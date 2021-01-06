@@ -10,14 +10,20 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Noto_Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        body {overflow-x: hidden}
+    </style>
     @yield('links')
 </head>
 <body>
@@ -27,29 +33,15 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+
+                <button class="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                    <!-- Other divs here-->
 
-                    <!-- Add search bar if main view isn't home-->
-                        @if ($view_name != 'home')
-                            <div>
-                                <form class="navbar-form" method="POST" action="entry" role="search">
-                                @csrf
-                                <div class="input-group">
-                                    <input type="text" class="form-control form-control-sm bg-dark text-light border-light" placeholder="Tìm từ" name="entry">
-                                    <div class="input-group-btn input-group-append">
-                                        <button class="btn btn-sm btn-light" type="submit">Tìm</button>
-                                    </div>
-                                </div>
-                                </form>
-                            </div>
-                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -75,8 +67,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -91,6 +83,8 @@
             </div>
         </nav>
 
+        @yield('navbars')
+
         <main class="py-4">
             @yield('content')
         </main>
@@ -98,6 +92,8 @@
         <footer>
             
         </footer>
+        <button id="back-to-top" class="btn btn-dark btn-lg back-to-top rounded-circle" role="button"><i class="fas fa-chevron-up"></i></button>
+
         @yield('scripts')
     </div>
 </body>
