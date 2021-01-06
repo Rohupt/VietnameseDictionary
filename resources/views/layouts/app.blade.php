@@ -21,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app-custom.css') }}" rel="stylesheet">
     <style>
         body {overflow-x: hidden}
     </style>
