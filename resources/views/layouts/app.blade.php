@@ -32,7 +32,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     
-                    <img src="images/navlogo.png" height="30">
+                    <img src="{{asset('images/navlogo.png')}}" height="30">
                 </a>
 
                 <button class="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
