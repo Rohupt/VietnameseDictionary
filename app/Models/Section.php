@@ -15,4 +15,8 @@ class Section extends Model {
     public function entry() {
         return $this->belongsTo(Entry::class, 'entryID');
     }
+
+    public function lexClass() {
+        return $this->belongTo(LexClass::class, 'lexclass', 'abbr');
+    }
 }

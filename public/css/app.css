@@ -10911,3 +10911,9 @@ a.text-dark:focus {
   }
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+}

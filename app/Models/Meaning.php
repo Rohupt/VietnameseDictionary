@@ -15,4 +15,8 @@ class Meaning extends Model {
     public function entry() {
         return $this->section->entry();
     }
+
+    public function lexClass() {
+        return $this->belongTo(LexClass::class, 'lexclass', 'abbr');
+    }
 }
