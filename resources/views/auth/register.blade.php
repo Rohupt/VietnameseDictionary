@@ -23,6 +23,9 @@
                                     </span>
                                 @enderror
                             </div>
+                            <div class="col-md-2" id="namecheck">
+
+                            </div>
                         </div>
 
                         <div class="form-group row">
@@ -45,6 +48,9 @@
                                     </span>
                                 @enderror
                             </div>
+                            <div class="col-md-2" id="emailcheck">
+
+                            </div>
                         </div>
 
                         <div class="form-group row">
@@ -58,6 +64,9 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
+                            <div class="col-md-2" id="passcheck">
+
                             </div>
                         </div>
 
@@ -75,6 +84,9 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
+                            <div class="col-md-2" id="passwordRecheck">
+
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -82,4 +94,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/auth/register.js') }}"></script>
 @endsection
