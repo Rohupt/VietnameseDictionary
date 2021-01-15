@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EntrySearchController as EntrySearchController;
+use App\Http\Controllers\SurveyController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +41,5 @@ Route::group(['prefix' => 'entry', 'as' => 'entry.'], function () {
     Route::get('/{entry}', [EntrySearchController::class, 'get'])->name('search');
     Route::post('/', fn () => redirect()->route(request('q') != null ? 'entry.search' : '/', ['entry' => request('q')]))->name('post');
 });
+
+Route::get('surveypopup', [SurveyController::class, 'get'])->name('surveypopup');
