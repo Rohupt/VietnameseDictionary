@@ -1,27 +1,29 @@
+//TODO: sửa lại phản ứng của form: cho viền đỏ (màu warning) và hiện thông báo lên.
+//Chừng nào tất cả các trường đều hợp lệ thì mới cho phép submit, còn không thì preventDefault()
+
 $(function () {
-    // $('#email').on('focusout', () => {
-    //     if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test($('#email').val())) {
-    //         $('#emailcheck').text('Valid email');
-    //     } else {
-    //         $('#emailcheck').text('Not a valid email');
-    //     }
-    // });
-    $('#email').on('focusout', () => {
+    $('#email').on('input', () => {
         if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('#email').val())) {
             $('#emailcheck').text('Valid email');
+            //TODO: 
         } else {
             $('#emailcheck').text('Not a valid email');
         }
     });
     
-    
-})
-$(function () {
-    $('#password').on('focusout', () => {
-        if (/^(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test($('#password').val())) {
-            $('#passcheck').text('Valid pass');
+    $('#password').on('input', () => {
+        if (/^(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test($('#password').val())) {
+            $('#passwordcheck').text('Valid pass');
         } else {
-            $('#passcheck').text('Not a valid pass');
+            $('#passwordcheck').text('Not a valid pass');
         }
     });
+
+    $('#password-confirm').on('input', () => {
+        if ($('#password').val() === $('#password-confirm').val()) {
+            $('#passwordRecheck').text('Passwords matched.');
+        } else {
+            $('#passwordRecheck').text('Passwords mismatch.');
+        }
+    })
 })

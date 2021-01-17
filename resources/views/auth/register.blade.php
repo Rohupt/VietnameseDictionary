@@ -65,7 +65,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="col-md-2" id="passcheck">
+                            <div class="col-md-2" id="passwordcheck">
 
                             </div>
                         </div>
@@ -76,6 +76,7 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
+                            <div class="col-md-2" id="passwordRecheck"></div>
                         </div>
 
                         <div class="form-group row mb-0">
@@ -84,7 +85,6 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
-                            <div class="col-md-2" id="passwordRecheck">
 
                             </div>
                         </div>
