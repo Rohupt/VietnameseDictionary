@@ -1,33 +1,5 @@
 @extends('layouts.app')
 
-<?php
-    $servername = "vietnamese-dictionary.clgtn4sxu21h.us-east-1.rds.amazonaws.com";
-    $username = "admin";
-    $password = "WebIT4552";
-    $dbname = "vietdict";
-     
-    // tạo connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // kiểm connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-     
-    $sql = "SELECT entry FROM entries";
-    $result = $conn->query($sql);
-     
-    if ($result->num_rows > 0) {
-        // output dữ liệu trên trang
-        $entries = array();
-
-        while($row = $result->fetch_assoc()) {
-            $entries[] = $row['entry'];
-        }
-    }
-
-    $conn->close();
-?>
-
 @section('content')
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -43,7 +15,7 @@
             
             <script>
                 $( "#suggesstion-box" ).autocomplete({
-                  source: <?php echo json_encode($entries) ?>
+                  source: <?php echo $entries ?>
                 });
             </script>
 

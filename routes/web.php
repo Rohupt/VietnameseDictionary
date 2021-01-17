@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', fn () => view('home'))->name('/');
+Route::get('/', [App\Http\Controllers\RootController::class, 'index'])->name('/');
 
 Route::group(['prefix' => 'email'], function () {
     Route::get('verify', fn () => view('auth.verify-email'))->middleware('auth')->name('verification.notice');

@@ -9,7 +9,7 @@ class Entry extends Model {
     public $timestamps = false;
 
     public function lexClass() {
-        return $this->belongTo(LexClass::class, 'lexclass', 'abbr');
+        return $this->belongsTo(LexClass::class, 'lexclass', 'abbr');
     }
 
     public function sections() {
@@ -55,4 +55,10 @@ class Entry extends Model {
     public function surveys() {
         return $this->hasMany(Survey::class, 'option1')->orWhere('option2', $this->id)->orWhere('option3', $this->id)->orWhere('option4', $this->id);
     }
+
+    // vuaphapthuat410 add this function
+    public function userEntries() {
+        return $this->belongsTo(UserEntries::class, 'entry');
+    }
+    //
 }

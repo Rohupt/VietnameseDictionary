@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Entry;
 use App\Models\LexClass;
+use Illuminate\Support\Facades\DB;
 
 class EntrySearchController extends Controller {
     function get($entry) {
@@ -20,6 +21,9 @@ class EntrySearchController extends Controller {
                     $meaning->lexclassname = LexClass::find($meaning->lexclass);
             }
         }
-        return view('entry', compact('entries'));
+
+        $suggest_list = DB::table('entries')->pluck('entry')->toJson();
+
+        return view('entry', compact('entries'), compact('suggest_list'));
     }
 }
