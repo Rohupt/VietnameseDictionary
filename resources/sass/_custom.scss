@@ -10,3 +10,32 @@
 .dropdown-menu {
     z-index: 1035;
 }
+.nav-link:hover{
+    border-bottom: 2px solid #ff9494 ;
+}
+#emailcheck.col-md-2,#passwordcheck.col-md-2,#passwordRecheck.col-md-2{
+    color:#e3342f;
+}
+.btn-primary {
+    background-color: #2e2525;
+    border-color: #181212;
+ 
+}
+.btn-primary:hover{
+    background-color: aliceblue;
+    color: black;
+}
+.card{
+    border:1px solid black;
+}
+.card-header{
+    border-bottom:1px solid black; 
+}
+.form-control{
+    border:1px solid #bdb4b4;
+
+}
+.form-control:focus{
+    border:2px solid #7e5f5f;
+    box-shadow: none;
+}
