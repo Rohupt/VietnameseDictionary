@@ -47,7 +47,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        echo json_encode($user);
+        return view('user.index', compact($user));
     }
 
     /**
@@ -58,7 +58,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('user.edit', compact($user));
     }
 
     /**

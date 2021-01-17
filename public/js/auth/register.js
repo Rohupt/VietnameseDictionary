@@ -2,7 +2,7 @@
 //Chừng nào tất cả các trường đều hợp lệ thì mới cho phép submit, còn không thì preventDefault()
 
 $(function () {
-    $('#email').on('input', () => {
+    $('#email').on('input focusout', () => {
         if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('#email').val())) {
             $('#emailcheck').text('Valid email');
             //TODO: 
@@ -11,15 +11,17 @@ $(function () {
         }
     });
     
-    $('#password').on('input', () => {
-        if (/^(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test($('#password').val())) {
+    $('#password').on('input focusout', () => {
+        if ($('#password').val == '') {
+            $('#passwordcheck').text('You cannot leave this field blank.');
+        } else if (/^(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test($('#password').val())) {
             $('#passwordcheck').text('Valid pass');
         } else {
             $('#passwordcheck').text('Not a valid pass');
         }
     });
 
-    $('#password-confirm').on('input', () => {
+    $('#password-confirm').on('input focusout', () => {
         if ($('#password').val() === $('#password-confirm').val()) {
             $('#passwordRecheck').text('Passwords matched.');
         } else {
