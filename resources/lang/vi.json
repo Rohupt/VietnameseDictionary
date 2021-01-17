@@ -172,6 +172,7 @@
     "Whoops!": "Rất tiếc!",
     "You are logged in!": "Bạn đã đăng nhập!",
     "You are receiving this email because we received a password reset request for your account.": "Bạn nhận được email này vì chúng tôi đã nhận được yêu cầu đặt lại mật khẩu cho tài khoản của bạn.",
+    "You cannot leave this field blank.": "Bạn không được để trống trường này.",
     "You have enabled two factor authentication.": "Bạn đã bật xác thực hai yếu tố.",
     "You have not enabled two factor authentication.": "Bạn chưa bật xác thực hai yếu tố.",
     "You may delete any of your existing tokens if they are no longer needed.": "Bạn có thể xoá bất kì token nào bạn đang có nếu chúng không còn cần thiết.",
