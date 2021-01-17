@@ -523,6 +523,7 @@ class ComposerStaticInit5c9b245af2849ccc9a2dc9b117046637
         'App\\Helpers\\Helper' => __DIR__ . '/../..' . '/app/Helpers/Helper.php',
         'App\\Helpers\\Snowflake\\Sequencer' => __DIR__ . '/../..' . '/app/Helpers/Snowflake/Sequencer.php',
         'App\\Helpers\\Snowflake\\Snowflake' => __DIR__ . '/../..' . '/app/Helpers/Snowflake/Snowflake.php',
+        'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
