@@ -9,7 +9,7 @@ use App\Models\LexClass;
 
 class EntrySearchController extends Controller {
     function get($entry) {
-        $entries = Entry::where('entry', $entry)->orderBy('id')->get();
+        $entries = Entry::where('entry', 'LIKE', '%'.$entry.'%')->orderBy('id')->get();
         foreach ($entries as $entry) {
             $entry->lexclassname = LexClass::find($entry->lexclass);
             $entry->sections = $entry->sections->sortBy('position');

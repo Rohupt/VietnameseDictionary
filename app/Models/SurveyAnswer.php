@@ -8,6 +8,11 @@ class SurveyAnswer extends Model {
     protected $primaryKey = "id";
     public $timestamps = false;
     public $incrementing = false;
+    const TYPE = 4;
+
+    protected $fillable = [
+        'id', 'surveyID', 'userID', 'userIP', 'answer'
+    ];
 
     public function survey() {
         return $this->belongsTo(Survey::class, 'surveyID');
