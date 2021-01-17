@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Survey;
+use App\Helpers\Snowflake\Snowflake;
+use App\Models\SurveyAnswer;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use stdClass;
 
-class SurveyController extends Controller
+class SurveyAnswerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,29 +36,39 @@ class SurveyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($survey, Request $request)
     {
-        //
+        error_log(gettype($request->ip()));
+        $userID = Auth::check() ? Auth::id() : 1;
+        $sf = new Snowflake(SurveyAnswer::TYPE);
+        SurveyAnswer::create([
+            'id' => $sf->get(),
+            'userID' => $userID,
+            'surveyID' => $survey,
+            'userIP' => $request->ip(),
+            'answer' => $request->input('answer')
+        ]);
+        return response('');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Survey  $survey
+     * @param  \App\Models\SurveyAnswer  $surveyAnswer
      * @return \Illuminate\Http\Response
      */
-    public function show(Survey $survey)
+    public function show(SurveyAnswer $surveyAnswer)
     {
-        echo json_encode($survey);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Survey  $survey
+     * @param  \App\Models\SurveyAnswer  $surveyAnswer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Survey $survey)
+    public function edit(SurveyAnswer $surveyAnswer)
     {
         //
     }
@@ -66,10 +77,10 @@ class SurveyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Survey  $survey
+     * @param  \App\Models\SurveyAnswer  $surveyAnswer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Survey $survey)
+    public function update(Request $request, SurveyAnswer $surveyAnswer)
     {
         //
     }
@@ -77,24 +88,11 @@ class SurveyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Survey  $survey
+     * @param  \App\Models\SurveyAnswer  $surveyAnswer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Survey $survey)
+    public function destroy(SurveyAnswer $surveyAnswer)
     {
         //
-    }
-
-    function get() {
-        $survey = Survey::inRandomOrder()->first();
-        $answers = [];
-        for ($i=1; $i <= sizeof($survey->options()); $i++) { 
-            $answer = new stdClass();
-            $answer->entry = $survey->options()[$i - 1]->entry;
-            $answer->count = $survey->answers()->where('answer', $i)->count();
-            array_push($answers, $answer);
-        }
-        $survey->answers = $answers;
-        return response(json_encode($survey));
     }
 }

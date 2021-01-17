@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\UserController as UserController;
 use App\Http\Controllers\EntrySearchController as EntrySearchController;
-use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\SurveyController as SurveyController;
+use App\Http\Controllers\SurveyAnswerController as SurveyAnswerController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -35,11 +37,14 @@ Route::group(['prefix' => 'email'], function () {
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
 
-
+Route::resource('user', UserController::class)->only(['index', 'show', 'store', 'edit']);
 
 Route::group(['prefix' => 'entry', 'as' => 'entry.'], function () {
     Route::get('/{entry}', [EntrySearchController::class, 'get'])->name('search');
     Route::post('/', fn () => redirect()->route(request('q') != null ? 'entry.search' : '/', ['entry' => request('q')]))->name('post');
 });
+
+Route::resource('survey', SurveyController::class)->middleware('log.route');
+Route::resource('survey.answer', SurveyAnswerController::class)->only(['store'])->middleware('log.route');
 
 Route::get('surveypopup', [SurveyController::class, 'get'])->name('surveypopup');

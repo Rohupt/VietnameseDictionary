@@ -67,14 +67,6 @@ class RegisterController extends Controller
     protected function create(array $data) {
         $sf = new Snowflake(User::TYPE);
         $data['id'] = $sf->get();
-        /*$user = new User();
-        $user->id = $sf->get();
-        $user->name = $data['name'];
-        $user->fullname = $data['fullname'];
-        $user->email = $data['email'];
-        $user->password = Hash::make($data['password']);
-        $user->save();
-        return $user;*/
         
         return User::create([
             'id' => $data['id'],

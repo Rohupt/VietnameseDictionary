@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Survey;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use stdClass;
 
-class SurveyController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,21 +42,21 @@ class SurveyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Survey  $survey
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Survey $survey)
+    public function show(User $user)
     {
-        echo json_encode($survey);
+        echo json_encode($user);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Survey  $survey
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Survey $survey)
+    public function edit(User $user)
     {
         //
     }
@@ -66,10 +65,10 @@ class SurveyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Survey  $survey
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Survey $survey)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -77,24 +76,11 @@ class SurveyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Survey  $survey
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Survey $survey)
+    public function destroy(User $user)
     {
         //
-    }
-
-    function get() {
-        $survey = Survey::inRandomOrder()->first();
-        $answers = [];
-        for ($i=1; $i <= sizeof($survey->options()); $i++) { 
-            $answer = new stdClass();
-            $answer->entry = $survey->options()[$i - 1]->entry;
-            $answer->count = $survey->answers()->where('answer', $i)->count();
-            array_push($answers, $answer);
-        }
-        $survey->answers = $answers;
-        return response(json_encode($survey));
     }
 }
