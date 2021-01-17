@@ -43,6 +43,10 @@
                 {{ $entry->etym_comment != null ? $entry->etym_comment : 'Chưa rõ, hoặc chưa cập nhật.'}}
             </p>
         </div>
+        @guest 
+        @else
+        <button class="btn-primary">Thêm từ</button>
+        @endguest
     </div>
     @endforeach
 @endsection
