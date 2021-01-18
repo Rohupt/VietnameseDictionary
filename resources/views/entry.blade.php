@@ -5,14 +5,14 @@
     <div class="card mx-3 mr-lg-0 my-3">
         <div class="card-header">
             <div class="row">
-           <div class="col-sm"> <h3 class="card-title my-auto">{{ $entry->entry }}<small class="card-subtitle font-italic font-weight-light text-muted font-smaller ml-3">{{ $entry->lexclassname->name1 }}</small></h3></div>
-          <div class="col-sm">  @guest 
-        @else
-        <button class="btn btn-lg btn-dark w-50 float-sm-right">Thêm từ</button>
-        
-        @endguest
-        </div>
-        </div>
+                <div class="col-sm"> <h3 class="card-title my-auto">{{ $entry->entry }}<small class="card-subtitle font-italic font-weight-light text-muted font-smaller ml-3">{{ $entry->lexclassname ? $entry->lexclassname->name1 : "" }}</small></h3></div>
+                <div class="col-sm">
+                    @guest 
+                    @else
+                    <button class="btn btn-lg btn-dark w-50 float-sm-right">Thêm từ</button>
+                    @endguest
+                </div>
+            </div>
         </div>
         
         <div class="card-body">
