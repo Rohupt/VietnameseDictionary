@@ -7,9 +7,9 @@
             <div class="row">
                 <div class="col-sm"> <h3 class="card-title my-auto">{{ $entry->entry }}<small class="card-subtitle font-italic font-weight-light text-muted font-smaller ml-3">{{ $entry->lexclassname ? $entry->lexclassname->name1 : "" }}</small></h3></div>
                 <div class="col-sm mx-auto align-self-center text-right">
-                    @guest 
+                    @guest
                     @else
-                    <div class="far fa-star fa-lg"></div>
+                    <div class="{{ $entry->userAdded ? 'fas' : 'far' }} fa-star fa-lg" role="button" title="Lưu / bỏ lưu từ" onmouseover="toggleEntryHover()" onmouseout="toggleEntryHover()" onclick="save_entry({{ $entry->id }})"></div>
                     @endguest
                 </div>
             </div>
@@ -52,27 +52,32 @@
                 {{ $entry->etym_comment != null ? $entry->etym_comment : 'Chưa rõ, hoặc chưa cập nhật.'}}
             </p>
         </div>
-        @guest 
-        @else
-        <button class="btn-primary" onclick="save_entry()">Thêm từ</button>
-        <script type="text/javascript">
-            function save_entry() {
-                $.ajax({
-                    url: "{{ route('user.toggleEntry', ['entryId' => $entry->id]) }}",
-                    method: 'POST',
-                    data: { "_token": "{{ csrf_token() }}" },
-                    success: (response) => {
-                        console.log(response);
-                    },
-                    error: (xhr, status, response) => {
-                        console.log(xhr);
-                        console.log(status);
-                        console.log(response);
-                    }
-                });
-            }
-        </script>
-        @endguest
     </div>
     @endforeach
+@endsection
+
+@section('scripts')
+@parent
+<script type="text/javascript">
+    function save_entry(id) {
+        $target = $(event.target);
+        $.ajax({
+            url: "{{ route('user.toggleEntry') }}",
+            method: 'POST',
+            data: { "_token": "{{ csrf_token() }}", "entryId": id },
+            success: () => {
+                $target.toggleClass("fas").toggleClass("far");
+            },
+            error: (xhr, status, response) => {
+                console.log(xhr);
+                console.log(status);
+                console.log(response);
+            }
+        });
+    }
+
+    function toggleEntryHover() {
+        $(event.target).toggleClass("fas").toggleClass("far");
+    }
+</script>
 @endsection
