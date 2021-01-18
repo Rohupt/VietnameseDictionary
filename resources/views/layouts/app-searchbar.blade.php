@@ -5,8 +5,6 @@
 @endsection
 
 @section('navbars')
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <nav class="navbar sticky-top bg-light" id="searchbar">
     <div class="container">
