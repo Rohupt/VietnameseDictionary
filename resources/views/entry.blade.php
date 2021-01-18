@@ -49,15 +49,16 @@
         <script type="text/javascript">
             function save_entry() {
                 $.ajax({
-                    url: {{ route('user.toggleentry', ['user' => Auth::user()]) }},
+                    url: "{{ route('user.toggleEntry', ['entryId' => $entry->id]) }}",
                     method: 'POST',
-                    data: {"entryID" : {{ $entry->id }} },
-                    success: () => {
-
+                    data: { "_token": "{{ csrf_token() }}" },
+                    success: (response) => {
+                        console.log(response);
                     },
-                    error: (xhr, status) => {
+                    error: (xhr, status, response) => {
                         console.log(xhr);
                         console.log(status);
+                        console.log(response);
                     }
                 });
             }

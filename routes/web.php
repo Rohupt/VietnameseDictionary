@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController as UserController;
 use App\Http\Controllers\EntrySearchController as EntrySearchController;
 use App\Http\Controllers\SurveyController as SurveyController;
 use App\Http\Controllers\SurveyAnswerController as SurveyAnswerController;
+use App\Http\Controllers\UserEntriesController as UserEntriesController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,7 @@ Route::group(['prefix' => 'email'], function () {
 });
 
 Route::resource('user', UserController::class)->only(['index', 'show', 'store', 'edit']);
+Route::post('user/toggleEntry', [UserController::class, 'toggleEntry'])->middleware('log.route')->name('user.toggleEntry');
 
 Route::group(['prefix' => 'entry', 'as' => 'entry.'], function () {
     Route::get('/{entry}', [EntrySearchController::class, 'get'])->name('search');
@@ -48,5 +50,3 @@ Route::resource('survey', SurveyController::class)->middleware('log.route');
 Route::resource('survey.answer', SurveyAnswerController::class)->only(['store'])->middleware('log.route');
 
 Route::get('surveypopup', [SurveyController::class, 'get'])->name('surveypopup');
-
-Route::resource('user_entries', UserEntriesController::class)->only(['store'])->middleware('log.route')->name('user.toggleentry');
