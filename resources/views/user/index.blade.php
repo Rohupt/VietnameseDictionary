@@ -9,5 +9,6 @@
                     <div class="col-md-12"><label class="labels">Giới tính:{{ Auth::user()->gender }}</div>
                     <div class="col-md-12"><label class="labels">Ngày sinh:{{ Auth::user()->date_of_birth }}</div>
                 </div>
+                {{-- <div class="row"></div> --}}
 </div>
 @endsection
