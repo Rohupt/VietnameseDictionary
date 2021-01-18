@@ -10951,3 +10951,7 @@ a.text-dark:focus {
   box-shadow: none;
 }
 
+.card {
+  min-width: 40%;
+}
+
