@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -82,5 +84,15 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+    }
+
+    public function toggleEntry(Request $request) {
+        if (DB::table('user_entries')->where('entry', $request->entryId)->where('id', Auth::id())->exists()) {
+            DB::table('user_entries')->where('entry', $request->entryId)->where('id', Auth::id())->delete();
+            return response()->json(['action' => 'deleted']);
+        } else {
+            DB::table('user_entries')->insert(['entry' => $request->entryId, 'id' => Auth::id()]);
+            return response()->json(['action' => 'inserted']);
+        }
     }
 }

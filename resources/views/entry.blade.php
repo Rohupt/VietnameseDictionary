@@ -52,7 +52,27 @@
                 {{ $entry->etym_comment != null ? $entry->etym_comment : 'Chưa rõ, hoặc chưa cập nhật.'}}
             </p>
         </div>
-
+        @guest 
+        @else
+        <button class="btn-primary" onclick="save_entry()">Thêm từ</button>
+        <script type="text/javascript">
+            function save_entry() {
+                $.ajax({
+                    url: "{{ route('user.toggleEntry', ['entryId' => $entry->id]) }}",
+                    method: 'POST',
+                    data: { "_token": "{{ csrf_token() }}" },
+                    success: (response) => {
+                        console.log(response);
+                    },
+                    error: (xhr, status, response) => {
+                        console.log(xhr);
+                        console.log(status);
+                        console.log(response);
+                    }
+                });
+            }
+        </script>
+        @endguest
     </div>
     @endforeach
 @endsection
