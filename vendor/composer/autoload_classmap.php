@@ -1144,6 +1144,7 @@ return array(
     'Illuminate\\Bus\\Dispatcher' => $vendorDir . '/laravel/framework/src/Illuminate/Bus/Dispatcher.php',
     'Illuminate\\Bus\\Events\\BatchDispatched' => $vendorDir . '/laravel/framework/src/Illuminate/Bus/Events/BatchDispatched.php',
     'Illuminate\\Bus\\PendingBatch' => $vendorDir . '/laravel/framework/src/Illuminate/Bus/PendingBatch.php',
+    'Illuminate\\Bus\\PrunableBatchRepository' => $vendorDir . '/laravel/framework/src/Illuminate/Bus/PrunableBatchRepository.php',
     'Illuminate\\Bus\\Queueable' => $vendorDir . '/laravel/framework/src/Illuminate/Bus/Queueable.php',
     'Illuminate\\Bus\\UpdatedBatchJobCounts' => $vendorDir . '/laravel/framework/src/Illuminate/Bus/UpdatedBatchJobCounts.php',
     'Illuminate\\Cache\\ApcStore' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/ApcStore.php',
