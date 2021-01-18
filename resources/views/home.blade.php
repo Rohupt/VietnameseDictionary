@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
+@section('links')
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+@endsection
+
+@section('content')
 
 <div class="container">
     <div class="row justify-content-center">
@@ -15,7 +17,7 @@
             
             <script>
                 $( "#suggesstion-box" ).autocomplete({
-                  source: <?php echo $entries ?>
+                    source: {!! echo $entries !!}
                 });
             </script>
 
@@ -25,4 +27,8 @@
         </form>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 @endsection

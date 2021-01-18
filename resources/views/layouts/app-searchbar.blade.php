@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('links')
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+@endsection
+
 @section('navbars')
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -13,7 +17,7 @@
 
                 <script>
                     $( "#suggesstion-box" ).autocomplete({
-                      source: <?php echo $suggest_list ?>
+                        source: {!! $suggest_list !!}
                     });
                 </script>
 
@@ -25,4 +29,9 @@
         </form>
     </div>
 </nav>
+@endsection
+
+@section('scripts')
+@parent
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 @endsection
