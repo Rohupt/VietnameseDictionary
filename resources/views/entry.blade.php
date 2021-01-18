@@ -6,10 +6,10 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-sm"> <h3 class="card-title my-auto">{{ $entry->entry }}<small class="card-subtitle font-italic font-weight-light text-muted font-smaller ml-3">{{ $entry->lexclassname ? $entry->lexclassname->name1 : "" }}</small></h3></div>
-                <div class="col-sm">
+                <div class="col-sm mx-auto align-self-center text-right">
                     @guest 
                     @else
-                    <button class="btn btn-lg btn-dark w-50 float-sm-right">Thêm từ</button>
+                    <div class="far fa-star fa-lg"></div>
                     @endguest
                 </div>
             </div>
