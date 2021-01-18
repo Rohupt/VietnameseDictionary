@@ -4,28 +4,28 @@
 $(function () {
     $('#email').on('input focusout', () => {
         if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('#email').val())) {
-            $('#emailcheck').text('Valid email');
+            $('#emailcheck').text('Email hợp lệ');
             //TODO: 
         } else {
-            $('#emailcheck').text('Not a valid email');
+            $('#emailcheck').text('Email không hợp lệ');
         }
     });
     
     $('#password').on('input focusout', () => {
         if ($('#password').val == '') {
-            $('#passwordcheck').text('You cannot leave this field blank.');
+            $('#passwordcheck').text('Bạn cần nhập mật khẩu');
         } else if (/^(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test($('#password').val())) {
-            $('#passwordcheck').text('Valid pass');
+            $('#passwordcheck').text('Mật khẩu hợp lệ');
         } else {
-            $('#passwordcheck').text('Not a valid pass');
+            $('#passwordcheck').text('Mật khẩu không hợp lệ');
         }
     });
 
     $('#password-confirm').on('input focusout', () => {
         if ($('#password').val() === $('#password-confirm').val()) {
-            $('#passwordRecheck').text('Passwords matched.');
+            $('#passwordRecheck').text('Hợp lệ');
         } else {
-            $('#passwordRecheck').text('Passwords mismatch.');
+            $('#passwordRecheck').text('nhập lại không đúng');
         }
     })
 })
