@@ -23,10 +23,10 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="col-md-2" id="namecheck">
-
-                            </div>
+                           
                         </div>
+                        <p class="col-md-12 text-center text-danger" id="namecheck">
+
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Fullname') }}</label>
@@ -48,10 +48,10 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="col-md-2" id="emailcheck">
-
-                            </div>
+                           
                         </div>
+                        <p class="col-md-12 text-center text-danger" id="emailcheck">
+
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -64,11 +64,11 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                
                             </div>
-                            <div class="col-md-2" id="passwordcheck">
 
-                            </div>
                         </div>
+                        <p class="col-md-12 text-center text-danger" id="passwordcheck">  </p>
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
@@ -76,13 +76,16 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                            <div class="col-md-2" id="passwordRecheck"></div>
+                           
                         </div>
+                        <p class="col-md-12 text-center text-danger" id="passwordRecheck"></p>
+
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Lưu thông tin
+                                    Lưu
                                 </button>
                             </div>
 
@@ -94,4 +97,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/auth/register.js') }}"></script>
 @endsection
