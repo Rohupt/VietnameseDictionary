@@ -10955,3 +10955,7 @@ a.text-dark:focus {
   min-width: 40%;
 }
 
+.text-danger {
+  font-size: small;
+}
+
