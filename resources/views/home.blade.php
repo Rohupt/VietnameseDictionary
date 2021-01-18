@@ -17,7 +17,7 @@
             
             <script>
                 $( "#suggesstion-box" ).autocomplete({
-                    source: {!! echo $entries !!}
+                    source: {!! $entries !!}
                 });
             </script>
 
