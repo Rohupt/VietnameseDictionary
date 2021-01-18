@@ -48,3 +48,5 @@ Route::resource('survey', SurveyController::class)->middleware('log.route');
 Route::resource('survey.answer', SurveyAnswerController::class)->only(['store'])->middleware('log.route');
 
 Route::get('surveypopup', [SurveyController::class, 'get'])->name('surveypopup');
+
+Route::resource('user_entries', UserEntriesController::class)->only(['store'])->middleware('log.route')->name('user.toggleentry');

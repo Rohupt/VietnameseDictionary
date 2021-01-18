@@ -45,7 +45,23 @@
         </div>
         @guest 
         @else
-        <button class="btn-primary">Thêm từ</button>
+        <button class="btn-primary" onclick="save_entry()">Thêm từ</button>
+        <script type="text/javascript">
+            function save_entry() {
+                $.ajax({
+                    url: {{ route('user.toggleentry', ['user' => Auth::user()]) }},
+                    method: 'POST',
+                    data: {"entryID" : {{ $entry->id }} },
+                    success: () => {
+
+                    },
+                    error: (xhr, status) => {
+                        console.log(xhr);
+                        console.log(status);
+                    }
+                });
+            }
+        </script>
         @endguest
     </div>
     @endforeach
