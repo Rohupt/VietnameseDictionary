@@ -11,10 +11,10 @@
         <form class="navbar-form w-100" method="POST" action="{{ route('entry.post') }}" role="search">
             @csrf
             <div class="input-group">
-                <input type="text" class="form-control col-10 border-dark" placeholder="Tìm từ" name="q" id="suggesstion-box">
+                <input type="text" class="form-control col-10 border-dark" placeholder="Tìm từ" name="q" id="suggestion-box">
 
                 <script>
-                    $( "#suggesstion-box" ).autocomplete({
+                    $( "#suggestion-box" ).autocomplete({
                         source: {!! $suggest_list !!}
                     });
                 </script>
