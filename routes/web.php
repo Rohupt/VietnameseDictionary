@@ -40,6 +40,7 @@ Route::group(['prefix' => 'email'], function () {
 
 Route::resource('user', UserController::class)->only(['index', 'show', 'store', 'edit', 'update']);
 Route::post('user/toggleEntry', [UserController::class, 'toggleEntry'])->middleware('log.route')->name('user.toggleEntry');
+Route::get('user/{user}/entries', [UserController::class, 'savedEntries'])->middleware('log.route')->name('user.entries');
 
 Route::group(['prefix' => 'entry', 'as' => 'entry.'], function () {
     Route::get('/{entry}', [EntrySearchController::class, 'get'])->name('search');

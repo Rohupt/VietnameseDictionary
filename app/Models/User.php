@@ -54,7 +54,7 @@ class User extends Authenticatable implements MustVerifyEmail
     
     // vuaphapthuat410 add this function
     public function savedEntries() {
-        return $this->hasOne(UserEntries::class, 'id');
+        return $this->belongsToMany(Entry::class, 'user_entries', 'id', 'entry');
     }
     //
 }

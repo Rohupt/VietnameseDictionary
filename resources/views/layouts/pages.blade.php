@@ -6,7 +6,7 @@
         @yield('left-col')
     </div>
     <div class="col-lg-4 col-md-9" id="right-col">
-
+        @yield('right-col')
     </div>
 </div>
 @endsection

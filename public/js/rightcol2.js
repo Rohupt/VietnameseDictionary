@@ -26,7 +26,7 @@ $(function () {
         url: "/surveypopup",
         success: (data) => {
             survey = JSONBI.parse(data);
-            var surveyCard = $("<div></div>").attr("id", "surveyCard").addClass("card text-center my-3 mx-3 ml-lg-0 collapse").appendTo("#right-col");
+            var surveyCard = $("<div></div>").attr("id", "surveyCard").addClass("card text-center my-3 mx-3 ml-lg-0 collapse").prependTo("#right-col");
             $("<div></div>").attr("id", "surveyCardBody").addClass("card-body").appendTo("#surveyCard");
             $("<h6></h6>").addClass("card-title font-weight-bold").html("Khảo sát chính tả").appendTo("#surveyCardBody");
             $("<p></p>").addClass("card-text").html(survey.question ? survey.question : "Bạn thường dùng cách viết nào sau đây?").appendTo("#surveyCardBody");
