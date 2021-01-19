@@ -49,6 +49,7 @@ $(function () {
                             for (let j = 0; j < survey.answers.length; j++) {
                                 resultDiv(survey.answers[j].entry, survey.answers[j].count, total, j == selectedIndex).appendTo("#surveyCardBody");
                             };
+                            $("<p></p>").addClass("mb-0").text(survey.comment).appendTo("#surveyCardBody");
                         },
                         error: (xhr, status) => {
                             console.log(xhr);

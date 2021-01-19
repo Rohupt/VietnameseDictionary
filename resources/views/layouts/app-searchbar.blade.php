@@ -2,6 +2,7 @@
 
 @section('links')
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 @endsection
 
 @section('navbars')
@@ -27,9 +28,4 @@
         </form>
     </div>
 </nav>
-@endsection
-
-@section('scripts')
-@parent
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 @endsection

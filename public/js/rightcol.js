@@ -3756,7 +3756,7 @@ function resultDiv(label, count, total, isSelected = false) {
     let percent = (Math.round(count * 10000.0 / total) / 100).toFixed(2);
     let resultDiv = $("<div></div>").addClass('my-2');
     let progress = $("<div></div>").addClass('progress');
-    let progressBar = $("<div></div>").addClass('progress-bar').addClass(isSelected ? 'bg-dark' : 'bg-gray').attr("style", `width: ${percent}%`)
+    let progressBar = $("<div></div>").addClass('progress-bar').addClass(isSelected ? 'bg-dark' : 'bg-secondary').attr("style", `width: ${percent}%`)
         .attr("aria-valuemin", "0").attr("aria-valuenow", `${count}`).attr("aria-valuemax", `${total}`);
     let labeldiv = $("<div></div>").addClass('font-weight-bold').addClass(isSelected ? 'text-dark' : 'text-secondary').text(`${label}: ${count} (${percent}%)`);
     progress.append(progressBar);
@@ -3799,6 +3799,7 @@ $(function () {
                             for (let j = 0; j < survey.answers.length; j++) {
                                 resultDiv(survey.answers[j].entry, survey.answers[j].count, total, j == selectedIndex).appendTo("#surveyCardBody");
                             };
+                            $("<p></p>").addClass("mb-0").text(survey.comment).appendTo("#surveyCardBody");
                         },
                         error: (xhr, status) => {
                             console.log(xhr);

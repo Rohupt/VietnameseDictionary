@@ -5,8 +5,8 @@
     <div class="card mx-3 mr-lg-0 my-3">
         <div class="card-header">
             <div class="row">
-                <div class="col-sm"> <h3 class="card-title my-auto">{{ $entry->entry }}<small class="card-subtitle font-italic font-weight-light text-muted font-smaller ml-3">{{ $entry->lexclassname ? $entry->lexclassname->name1 : "" }}</small></h3></div>
-                <div class="col-sm mx-auto align-self-center text-right">
+                <div class="col-sm-10"> <h3 class="card-title my-auto">{{ $entry->entry }}<small class="card-subtitle font-italic font-weight-light text-muted font-smaller ml-3">{{ $entry->lexclassname ? $entry->lexclassname->name1 : "" }}</small></h3></div>
+                <div class="col-sm align-self-center text-right">
                     @guest
                     @else
                     <div class="{{ $entry->userAdded ? 'fas' : 'far' }} fa-star fa-lg" role="button" title="Lưu / bỏ lưu từ" onmouseover="toggleEntryHover()" onmouseout="toggleEntryHover()" onclick="save_entry({{ $entry->id }})"></div>
