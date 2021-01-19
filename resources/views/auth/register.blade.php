@@ -23,7 +23,6 @@
                                     </span>
                                 @enderror
                             </div>
-                           
                         </div>
                         <p class="col-md-12 text-center text-danger" id="namecheck">
 
@@ -48,7 +47,6 @@
                                     </span>
                                 @enderror
                             </div>
-                           
                         </div>
                         <p class="col-md-12 text-center text-danger" id="emailcheck">
 
@@ -76,11 +74,8 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                           
                         </div>
                         <p class="col-md-12 text-center text-danger" id="passwordRecheck"></p>
-
-
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

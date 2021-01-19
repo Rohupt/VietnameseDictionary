@@ -38,7 +38,7 @@ Route::group(['prefix' => 'email'], function () {
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
 
-Route::resource('user', UserController::class)->only(['index', 'show', 'store', 'edit']);
+Route::resource('user', UserController::class)->only(['index', 'show', 'store', 'edit', 'update']);
 Route::post('user/toggleEntry', [UserController::class, 'toggleEntry'])->middleware('log.route')->name('user.toggleEntry');
 
 Route::group(['prefix' => 'entry', 'as' => 'entry.'], function () {

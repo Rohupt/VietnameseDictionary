@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -72,7 +74,15 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $this->validator($request->all())->validate();
+
+        User::find($user->id)->update([
+            'name' => $request->name,
+            'fullname' => $request->fullname,
+            'gender' => $request->gender == 'null' ? null : ($request->gender == 'true' ? 1 : 0),
+            'date_of_birth' => $request->date_of_birth
+        ]);
+        return redirect(route('user.show', ['user' => $user]));
     }
 
     /**
@@ -94,5 +104,14 @@ class UserController extends Controller
             DB::table('user_entries')->insert(['entry' => $request->entryId, 'id' => Auth::id()]);
             return response()->json(['action' => 'inserted']);
         }
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'fullname' => ['string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', Rule::unique('users', 'name')->ignore(Auth::user()->id)],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore(Auth::user()->id)],
+        ]);
     }
 }

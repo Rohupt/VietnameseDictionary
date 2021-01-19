@@ -8,31 +8,22 @@
                 <div class="card-header">Chỉnh sửa thông tin</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('user.update', ['user' => Auth::user()]) }}">
+                        @method('PATCH')
                         @csrf
-
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ Auth::user()->name }}" required autocomplete="name" autofocus>
                             </div>
-                           
                         </div>
-                        <p class="col-md-12 text-center text-danger" id="namecheck">
-
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Fullname') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="fullname" value="{{ old('fullname') }}">
+                                <input id="name" type="text" class="form-control" name="fullname" value="{{ Auth::user()->fullname }}">
                             </div>
                         </div>
 
@@ -40,55 +31,33 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input id="email" type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" required autocomplete="email">
                             </div>
-                           
                         </div>
-                        <p class="col-md-12 text-center text-danger" id="emailcheck">
-
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">Giới tính</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                
+                                <select id="gender" class="form-control" name="gender">
+                                    <option value="true" {{ Auth::user()->gender ? 'selected' : '' }}>Nam</option>
+                                    <option value="false" {{ (Auth::user()->gender != null && !Auth::user()->gender) ? 'selected' : '' }}>Nữ</option>
+                                    <option value="null" {{ Auth::user()->gender == null ? 'selected' : '' }}>Khác</option>
+                                </select>
                             </div>
-
                         </div>
-                        <p class="col-md-12 text-center text-danger" id="passwordcheck">  </p>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="date-of-birth" class="col-md-4 col-form-label text-md-right">Ngày sinh</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="date-of-birth" type="date" class="form-control" name="date_of_birth" {{ Auth::user()->date_of_birth ? 'value='.Auth::user()->date_of_birth : '' }}>
                             </div>
-                           
                         </div>
-                        <p class="col-md-12 text-center text-danger" id="passwordRecheck"></p>
-
-
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Lưu
-                                </button>
-                            </div>
-
+                                <button class="btn btn-primary" type="submit">Lưu</button>
                             </div>
                         </div>
                     </form>

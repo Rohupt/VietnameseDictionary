@@ -2,6 +2,7 @@
 
 @section('links')
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 @endsection
 
 @section('content')
@@ -13,10 +14,10 @@
     <div class="row justify-content-center">
         <form class="form-inline input-group col-md-8" method="POST" action="{{ route('entry.post') }}">
             @csrf
-            <input class="form-control form-control-lg border-dark bg-light rounded-left col-10" type="text" name="q" placeholder="Tìm từ" aria-label="Search" id="suggesstion-box">
+            <input class="form-control form-control-lg border-dark bg-light rounded-left col-10" type="text" name="q" placeholder="Tìm từ" aria-label="Search" id="suggestion-box">
             
             <script>
-                $( "#suggesstion-box" ).autocomplete({
+                $( "#suggestion-box" ).autocomplete({
                     source: {!! $entries !!}
                 });
             </script>
@@ -27,8 +28,4 @@
         </form>
     </div>
 </div>
-@endsection
-
-@section('scripts')
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 @endsection

@@ -38,7 +38,6 @@ class SurveyAnswerController extends Controller
      */
     public function store($survey, Request $request)
     {
-        error_log(gettype($request->ip()));
         $userID = Auth::check() ? Auth::id() : 1;
         $sf = new Snowflake(SurveyAnswer::TYPE);
         SurveyAnswer::create([
